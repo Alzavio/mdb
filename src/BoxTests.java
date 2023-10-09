@@ -14,11 +14,23 @@ public class BoxTests {
             items,
             box.addItem("test")
         );
+
+        items[1] = "test2";
+        assertArrayEquals(
+            items,
+            box.addItem("test2")
+        );
     }
 
     @Test
     public void testRemoveItem() {
         String[] items = new String[10];
+        assertArrayEquals(
+            items,
+            box.removeItem("test")
+        );
+        
+        box.addItem("test");
         assertArrayEquals(
             items,
             box.removeItem("test")
